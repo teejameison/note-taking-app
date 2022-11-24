@@ -9,10 +9,7 @@ TODO
 - [Screenshots](#screenshots)
 - [Technologies](#technologies)
 - [Setup](#setup)
-- [Approach](#approach)
 - [Status](#status)
-- [Credits](#credits)
-- [License](#license)
 
 ## About The App
 This is a simple notetaking app that stores your notes and tahs using your browsers Local Storage.  Soon to implement authentication & database for saving.
