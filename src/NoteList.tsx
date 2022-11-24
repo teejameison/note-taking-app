@@ -51,9 +51,9 @@ export default function NoteList({
         (title === "" ||
           note.title.toLowerCase().includes(title.toLowerCase())) &&
         (selectedTags.length === 0 ||
-          selectedTags.every((tag) => {
-            note.tags.some((noteTag) => noteTag.id === tag.id);
-          }))
+          selectedTags.every((tag) =>
+            note.tags.some((noteTag) => noteTag.id === tag.id)
+          ))
       );
     });
   }, [title, selectedTags, notes]);
@@ -61,19 +61,29 @@ export default function NoteList({
     <>
       <Row className='align-items-center mb-4'>
         <Col>
-          <h1>Notes</h1>
+          <h1 className='text-6xl font-semibold leading-normal mt-0 mb-2 '>
+            Notes
+          </h1>
         </Col>
         <Col xs='auto'>
           <Stack gap={2} direction='horizontal'>
             <Link to='/new'>
-              <Button variant='primary'>Create</Button>
+              <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+                Create
+              </button>
             </Link>
-            <Button
+            <button
+              onClick={() => setEditTagsModalIsOpen(true)}
+              className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold py-2 px-4 border border-blue-500 rounded'
+            >
+              Edit Tags
+            </button>
+            {/* <Button
               onClick={() => setEditTagsModalIsOpen(true)}
               variant='outline-secondary'
             >
               Edit Tags
-            </Button>
+            </Button> */}
           </Stack>
         </Col>
       </Row>
